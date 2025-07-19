@@ -1,12 +1,10 @@
 body {
     min-height: 100vh;
     background-color: black;
-    font-family: Georgia, times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
 }
 
-#content {
-    overflow: auto;
-}
 
 #header {
     color: white;
@@ -15,11 +13,16 @@ body {
     display: block;
 }
 
+#name {
+    margin-left: 20px;
+}
+
 #nav {
     margin: 20px auto 20px auto;
     width: 100%;
     background-color: grey;
     border: 2px solid black;
+    margin-top:50px;
 }
 #nav ul {
     list-style-type: none;
@@ -37,14 +40,24 @@ body {
     display:block;
 }
 
-.feature {
-    color:white;
-    background-color: grey;
+#nav a:hover {
+    transform: translateY(2px);
+    color: #ffdd44;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px #ffdd44;
 }
+
+#feature {
+    color:white;
+    text-align: left;
+    font-size: x-large;
+    margin-left: 40px;
+}
+
 
 .info {
     color: white;
-    background-color: grey;
+    background-color: black;
     margin: 20px auto 20px auto;
     border: 10px black;
     text-align: center;
