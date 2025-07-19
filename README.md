@@ -1,2 +1,12 @@
 # Portfolio-Website
-Website that showcases my portfolio of work
+This is my personal portofolio website showcasing my projects, skills, and resume
+
+## Tech Stack
+- HTML
+- CSS
+- Git & Github Pages for deployment
+
+To run it locally:
+git clone https://github.com/giowassheree/Portfolio-Website.git
+cd portfolio
+open index.html
