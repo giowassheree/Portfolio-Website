@@ -1,46 +1,140 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href = style.css type = text/css rel = "stylesheet">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Animations Demo</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
 
-    <body>
-        <header>
-            <div id = "nav">
-                 <ul>
-                        <li><a href = "index.html">Home</a></li>
-                        <li><a href = "about.html">About Me</a></li>
-                        <li><a href = "https://github.com/giowassheree">GitHub</a></li>
-                        <li><a href = "https://www.linkedin.com/in/giovanni-muniz-28774021a/">LinkedIn</a></li>
-                        <li><a href = "">Resume</a></li>
-                    </ul>
-            </div>
-        </header>
-        <section id = "about" class = "section about">
-            <div class = "section-content">
-                <div class = "about-grid">
-                    <div class = "about-text">
-                        <h2>About Me</h2>
-                        <p>I'm a passionate Computer Science Student with a vision to create technology and video games that makes an impact in the world</p>
-                        <p>I specialize in software enginerring, video game development, and web development</p>
-                        </div>
-                </div>
-            </div>
-            <div class = "skills">
-                <div class = "skill-item">
-                    <h3>Frontend Development</h3>
-                    <p>HTML, CSS, Javascript, React</p>
-                </div>
-                <div class = "skill-item">
-                    <h3>Video Game Development</h3>
-                    <p>Unreal Engine, C++, Unity</p>
-                </div>
-                <div class = "skill-item">
-                    <h3>Other Skills</h3>
-                    <p>Git, Java, Python, Data Structures, Algorithms</p>
-                </div>
-            </div>
-        </section>
-    </body>
+    <!-- Header with slide-in animation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Giovanni Muniz</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="https://github.com/giowassheree">GitHub</a></li>
+                    <li class="nav-item"><a href="https://www.linkedin.com/in/giovanni-muniz-28774021a/">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+
+    <!-- About Section with staggered reveals -->
+    <section id="about" class="section about">
+        <div class="section-content">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm a passionate Computer Science student with a vision to create technology that makes a positive impact on the world.</p>
+                    <p>I specialize in web development, software engineering, and emerging technologies.</p>
+                </div>
+                <div class="skills">
+                    <div class="skill-item">
+                        <h3>Frontend Development</h3>
+                        <p>HTML, CSS, JavaScript, React</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Backend Development</h3>
+                        <p>Python, Node.js, Databases</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Other Skills</h3>
+                        <p>Git, Data Structures, Algorithms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Contact Section with form animations -->
+    <section id="contact" class="section contact">
+        <div class="section-content">
+            <div class="contact-container">
+                <h2>Get In Touch</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    
+                    // Special handling for staggered animations
+                    const children = entry.target.querySelectorAll('.skill-item, .project-card, .form-group');
+                    children.forEach(child => {
+                        child.classList.add('reveal');
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all section content
+        document.querySelectorAll('.section-content').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollIndicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.hero .section-content');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
 </html>
