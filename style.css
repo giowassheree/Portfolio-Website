@@ -3,34 +3,102 @@ body {
     background-color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: larger;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    overflow-x:hidden;
 }
 
 
-#header {
+.header {
     color: white;
-    margin: 20px auto 20px auto;
-    text-align: left;
-    display: block;
-}
-
-#name {
-    margin-left: 20px;
-}
-
-#nav {
-    margin: 20px auto 20px auto;
+    position: fixed;
     width: 100%;
-    background-color: grey;
-    border: 2px solid black;
-    margin-top:50px;
+    margin: 20px auto 20px auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-align: left;
+    padding: 1rem 0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    display: block;
+    animation: slideDownHeader 1s ease-out 0.2s forwards;
 }
-#nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
+@keyframes slideDownHeader {
+    to { transform: translateY(0);}
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: slideInLeft 1s ease-out 0.5s forwards;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slideInDown 0.8s ease-out forwards;
+}
+
+.nav-item:nth-child(1) {animation-delay: 0.6;}
+.nav-item:nth-child(2) {animation-delay: 0.7;}
+.nav-item:nth-child(3) {animation-delay: 0.8;}
+.nav-item:nth-child(4) {animation-delay: 0.9;}
+
+.nav-item a{
+    color:white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: #ffd700;
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Main Content Sections */
+.section {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
+
+.section-content {
+    
+}
+
 
 #nav a:link,
 #nav a:visited {
