@@ -17,7 +17,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
     color: white;
     padding: 1rem 0;
     z-index: 1000;
@@ -121,7 +121,7 @@ body {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -179,7 +179,7 @@ body {
 
 /* Projects Section with slide-up cards */
 .projects {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
     color: white;
 }
 
@@ -274,7 +274,7 @@ body {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
     color: white;
     padding: 1rem 2rem;
     border: none;
