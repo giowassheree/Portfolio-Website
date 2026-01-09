@@ -17,7 +17,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background: #0979f9;
     color: white;
     padding: 1rem 0;
     z-index: 1000;
@@ -114,22 +114,19 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #e8f0f8;
     text-align: center;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #0979f9;
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #666;
+    color: black;
     margin-bottom: 2rem;
 }
 
@@ -179,7 +176,7 @@ body {
 
 /* Projects Section with slide-up cards */
 .projects {
-    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background: #0979f9;
     color: white;
 }
 
@@ -274,17 +271,18 @@ body {
 }
 
 .submit-btn {
-    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background: #0979f9;
     color: white;
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
+    background: #0761c7;
     transform: translateY(-3px);
 }
 
@@ -294,7 +292,7 @@ body {
     top: 0;
     left: 0;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: #0979f9;
     z-index: 1001;
     transform-origin: left;
     transform: scaleX(0);
